@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Book List</h1>
+  <ul>
+    {% for book in books %}
+      <li style="list-style-type: none; text-align: center;margin-bottom: 10px;">
+        {{ book.title }} by {{ book.author }} (ISBN: {{ book.isbn_number }}, Published: {{ book.published_date }}, Genre: {{ book.genre }})
+        <a href="{% url 'book_update' book.pk %}">Edit</a>  <!-- Edit link -->
+        <a href="{% url 'book_delete' book.pk %}">Delete</a>
+      </li>
+    {% empty %}
+      <li>No books found.</li>
+    {% endfor %}
+  </ul>
+  
+{% endblock %}

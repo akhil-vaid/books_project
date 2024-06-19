@@ -1,0 +1,96 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 1em;
+}
+
+nav{text-align: center;}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    
+}
+
+nav ul li {
+    display: inline;
+    padding: 10px;
+    
+    
+}
+
+nav ul li a {
+    color: white;
+    
+}
+
+main {
+    margin: 2em;
+}
+
+h1, h2 {
+    color: #343a40;
+    text-align: center;
+}
+
+/* Form styles */
+form {
+    max-width: 500px; /* Increase the max width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 2em; /* Increase padding for more height */
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"],
+form input[type="date"] {
+    width: 500px; /* Full width */
+    padding: 15px; /* Increase padding for more height */
+    margin: 1em 0; /* Increase space between inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+form button[type="submit"] {
+    width: 500px; /* Ensure button matches form width */
+    padding: 15px; /* Increase padding for more height */
+    background-color: #0056b3;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px; /* Increase font size */
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #343a40;
+}
+
+
+/* Book list styles */
+.book-list {
+    list-style-type: none; /* Remove bullets */
+    padding: 10px;
+    
+    
+    
+}
+
+.book-list li {
+    margin: 10px 0;
+    display: grid;
+    grid: 150px / auto auto auto auto auto;
+}
+
+.book-list img {
+    height: 100px;
+}

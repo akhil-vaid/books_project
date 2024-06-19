@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Welcome to the Books Library !</h1>
+
+  <!-- Authentication Links -->
+  <div>
+    {% if user.is_authenticated %}
+      <p>Hello, {{ user.username }}!</p>
+      <a href="{% url 'logout' %}">Logout</a>
+      <!-- Add New Book Link -->
+      <a href="{% url 'book_create' %}">Add New Book</a>
+    
+    {% endif %}
+  </div>
+
+  <!-- Search Form -->
+  <h2 style="text-align: center;">Search and Find Books You Want To Read</h2>
+  <form method="get" action="{% url 'book_search' %}">
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Book List -->
+  <h2>Book List</h2>
+  <ul class="book-list">
+    {% for book in books %}
+      <li>
+        {% if book.cover %}
+          <img src="{{ book.cover.url }}" alt="Cover image of {{ book.title }}">
+        {% endif %}
+        <strong>{{ book.title }}</strong> by {{ book.author }}<br>
+        ISBN: {{ book.isbn_number }}, Published: {{ book.published_date }}, Genre: {{ book.genre }}<br>
+        <a href="{% url 'book_update' book.pk %}">Edit</a>
+        <a href="{% url 'book_delete' book.pk %}">Delete</a>
+      </li>
+    {% empty %}
+      <li>No books found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
